@@ -142,7 +142,6 @@ public class PlayerInfo : MonoBehaviour
     // apply damage taken from a fall if falling fast enough
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(fallSpeed);
         if (Input.GetAxisRaw("Vertical") == 1) return;
         if (collision.gameObject.CompareTag("Tiles") && Mathf.Abs(fallSpeed) > minSpeedForDamage)
         {
