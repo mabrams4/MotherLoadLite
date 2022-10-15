@@ -47,7 +47,7 @@ public class BMMineralStore : MonoBehaviour
         inventory.currentCapacity = 0;
         moneyText.SetMoneyValue(playerInfo.money);
         mineralStoreSlots.RemoveMinerals(0);
-        audioManager.PlayPurchaseItemSound();
+        if (toRemove.Count > 0) audioManager.PlayPurchaseItemSound();
     }
 
     // sells a single mineral and updates mineral store UI to look cleannnn

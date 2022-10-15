@@ -20,6 +20,7 @@ public class PlayerInfo : MonoBehaviour
     }
     #endregion
     public GameObject[] shopAndDialogueUIs;
+    public GameObject gameUI;
     public GameObject inventoryUI;
     public AltitudeText altitudeText;
     public Button inventoryButton;
@@ -101,6 +102,7 @@ public class PlayerInfo : MonoBehaviour
         if (currentFuel <= 0 || currentHealth <= 0 && !died)
         {
             died = true;
+            gameUI.SetActive(false);    // disables any open shop UIS
             GetComponent<Animator>().SetBool("died", true);
             gameOverScreen.SetActive(true);
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -140,10 +142,11 @@ public class PlayerInfo : MonoBehaviour
     // apply damage taken from a fall if falling fast enough
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(fallSpeed);
         if (Input.GetAxisRaw("Vertical") == 1) return;
         if (collision.gameObject.CompareTag("Tiles") && Mathf.Abs(fallSpeed) > minSpeedForDamage)
         {
-            float damage = Mathf.Pow((Mathf.Abs(fallSpeed) / damageModifier), power) - minSpeedForDamage;
+            float damage = Mathf.Round(Mathf.Pow(Mathf.Abs(fallSpeed / damageModifier), power));
             ApplyDamage(Mathf.Min(damage, maxFallDamage));
         }
     }

@@ -19,6 +19,7 @@ public class BMRepairShop : MonoBehaviour
     // refills player health
     public void RefillHealth()
     {
+        if (playerInfo.currentHealth == playerInfo.maxHealth || playerInfo.money == 0) return;
         float healthToBuy = playerInfo.maxHealth - playerInfo.currentHealth;
         float totalCost = Mathf.Floor(healthToBuy * repairCost);
         if (playerInfo.money < totalCost)

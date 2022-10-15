@@ -18,6 +18,7 @@ public class BMFuelStation : MonoBehaviour
     // refill player fuel bar
     public void RefillFuel()
     {
+        if (playerInfo.currentFuel == playerInfo.maxFuel || playerInfo.money == 0) return;
         float fuelToBuy = playerInfo.maxFuel - playerInfo.currentFuel;
         float totalCost = fuelToBuy * fuelCost;
         if (playerInfo.money < totalCost)
