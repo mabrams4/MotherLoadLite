@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e769ee518572e5846aad1d92ac5dbf23, type: 3}
+  m_Name: Mine
+  m_EditorClassIdentifier: 
+  name: Mine
+  description: Blows up everything in a small radius after a short delay, including
+    minerals!
+  cost: 100
+  sprite: {fileID: 21300000, guid: 6f5248ab910420243a233522b6e9e608, type: 3}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf32ff2b68a3ca48b923c0682d199a4, type: 3}
+  m_Name: Gold
+  m_EditorClassIdentifier: 
+  name: Gold
+  cashValue: 500
+  numSpawns: 250
+  firstFifthSpawnchance: 0.1
+  secondFifthSpawnchance: 0.35
+  thirdFifthSpawnchance: 0.65
+  fourthFifthSpawnchance: 0.85
+  tiles:
+  - {fileID: 11400000, guid: e3d6f48d6038c804ba60aeeed542a4d0, type: 2}
+  - {fileID: 11400000, guid: 5862682a587596a4f95459e0559b89e2, type: 2}
+  - {fileID: 11400000, guid: e926aec418fd11d4eb4f2522c02498bc, type: 2}
+  - {fileID: 11400000, guid: 9771ede804fa8ef438c2c48e0c88b834, type: 2}

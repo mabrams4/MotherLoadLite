@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c014fa5892c3a643b351f54eb4b0e82, type: 3}
+  m_Name: Anti-Matter FuelTank
+  m_EditorClassIdentifier: 
+  name: Anti-Matter Fuel Tank
+  maxFuel: 1000
+  cost: 750000
+  sprite: {fileID: 21300000, guid: c9390b5437e42574a916d9664222717c, type: 3}

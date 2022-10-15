@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf32ff2b68a3ca48b923c0682d199a4, type: 3}
+  m_Name: Coal
+  m_EditorClassIdentifier: 
+  name: Coal
+  cashValue: 100
+  numSpawns: 450
+  firstFifthSpawnchance: 0.6
+  secondFifthSpawnchance: 0.85
+  thirdFifthSpawnchance: 0.9
+  fourthFifthSpawnchance: 0.975
+  tiles:
+  - {fileID: 11400000, guid: 45c75d883b844854d98d5d6f890ca8a4, type: 2}
+  - {fileID: 11400000, guid: 87ee2953a30186347b6b749f0ec42dcf, type: 2}
+  - {fileID: 11400000, guid: 08b0142f9a482d7408e89a7e94efcbce, type: 2}
+  - {fileID: 11400000, guid: 7d6f1de454288dc40bc8fc7865a66155, type: 2}

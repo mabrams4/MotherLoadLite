@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf32ff2b68a3ca48b923c0682d199a4, type: 3}
+  m_Name: Iron
+  m_EditorClassIdentifier: 
+  name: Iron
+  cashValue: 75
+  numSpawns: 500
+  firstFifthSpawnchance: 0.65
+  secondFifthSpawnchance: 0.85
+  thirdFifthSpawnchance: 0.9
+  fourthFifthSpawnchance: 0.975
+  tiles:
+  - {fileID: 11400000, guid: 98e1bbe7270b2c746a1ff348821f76e8, type: 2}
+  - {fileID: 11400000, guid: e303df39f31c71e45906066fb1d63ae1, type: 2}
+  - {fileID: 11400000, guid: f4c35428bea2d7940b8ff4beb3f5a37b, type: 2}
+  - {fileID: 11400000, guid: 9550f69c9bc0c9948b8bc83a036becb3, type: 2}
