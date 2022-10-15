@@ -133,7 +133,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in sentence.ToCharArray())
         {
             dialogueText.text += c;
-            yield return new WaitForSecondsRealtime(.0f);
+            yield return new WaitForSecondsRealtime(.01f);
         }
         finishedTyping = true;
     }
