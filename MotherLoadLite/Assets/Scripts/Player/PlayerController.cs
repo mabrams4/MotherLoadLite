@@ -228,7 +228,7 @@ public class PlayerController : MonoBehaviour
     {
         startTime = Time.time;
         drillingStartPos = transform.position;
-        Vector3Int tilePos = grid.WorldToCell(CalculateDrillingDestination());
+        Vector3Int tilePos = grid.WorldToCell(CalculateDrillingDestinationWorldCoordinates());
         drillingEndPos = grid.GetCellCenterWorld(tilePos);
 
         journeyLength = Vector3.Distance(drillingStartPos, drillingEndPos);
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // calculates the center of the current tile being drilled and returns its position
-    Vector3 CalculateDrillingDestination()
+    Vector3 CalculateDrillingDestinationWorldCoordinates()
     {
         Vector3 offset = new Vector3(0, 0, 0);
 
@@ -271,13 +271,13 @@ public class PlayerController : MonoBehaviour
         
         // cant drill directly under where the stores/shops are
         Tilemap storeBases = GetTileMap("StoreBases");
-        if (storeBases.GetTile(grid.WorldToCell(CalculateDrillingDestination()))) return false;
+        if (storeBases.GetTile(grid.WorldToCell(CalculateDrillingDestinationWorldCoordinates()))) return false;
 
         Tilemap currentGroundMap = groundMapTracker.currentGroundMap;
         Tilemap previousGroundMap = groundMapTracker.previousGroundMap;
 
-        Vector3Int currentGroundMapTilePos = currentGroundMap.WorldToCell(CalculateDrillingDestination());
-        Vector3Int previousGroundMapTilePos = previousGroundMap.WorldToCell(CalculateDrillingDestination());
+        Vector3Int currentGroundMapTilePos = currentGroundMap.WorldToCell(CalculateDrillingDestinationWorldCoordinates());
+        Vector3Int previousGroundMapTilePos = previousGroundMap.WorldToCell(CalculateDrillingDestinationWorldCoordinates());
 
         StopAllCoroutines();    // stop animating dirt particles 
 
@@ -474,7 +474,6 @@ public class PlayerController : MonoBehaviour
         Vector3Int currentGroundMapTilePos = currentGroundMap.WorldToCell(playerPos);
         Vector3Int previousGroundMapTilePos = previousGroundMap.WorldToCell(playerPos);
 
-        // must check both maps in case of player being at the intersection of two ground map chunks
         if (currentGroundMap.GetTile(currentGroundMapTilePos) ||
             previousGroundMap.GetTile(previousGroundMapTilePos)) return true;
         return false;

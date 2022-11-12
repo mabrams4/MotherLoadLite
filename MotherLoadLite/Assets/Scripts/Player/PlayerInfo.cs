@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +20,10 @@ public class PlayerInfo : MonoBehaviour
         instance = this;
     }
     #endregion
-    public GameObject[] shopAndDialogueUIs;
+    public GameObject[] gameUIS;
     public GameObject gameUI;
     public GameObject inventoryUI;
+    public GameObject redScreen;
     public AltitudeText altitudeText;
     public Button inventoryButton;
 
@@ -39,11 +41,12 @@ public class PlayerInfo : MonoBehaviour
     public float ancientTech;
     public int altitude;
 
-    // falling damage modifiers
+    // falling damage things
     public float minSpeedForDamage;
     public float damageModifier;
     public float power;
     public float maxFallDamage;
+    bool centeredPlayer;
 
     // Game Data
     public bool hasAntiGravityDrill;
@@ -111,15 +114,24 @@ public class PlayerInfo : MonoBehaviour
         }
 
         fallSpeed = GetComponent<Rigidbody2D>().velocity.y;
+        // center player to make collisions work. Weird bug if dont do this
+        if (Mathf.Abs(fallSpeed) >= minSpeedForDamage && !centeredPlayer)
+        {
+            Grid grid = GetComponent<PlayerController>().grid;
+            Vector3 tilePos = grid.GetCellCenterWorld(grid.WorldToCell(transform.position));
+            transform.position = new Vector3(tilePos.x, transform.position.y, transform.position.z);
+            centeredPlayer = true;
+        }
+        if (Input.GetAxisRaw("Horizontal") != 0) centeredPlayer = false;
 
         // set player altitude
         altitude = Mathf.FloorToInt(transform.position.y - GetComponent<PlayerController>().grid.transform.localScale.y - 1);
         altitudeText.SetAltitude(altitude);
-
+        
         // if a store or dialogue box is open dont consume fuel, disable inventory button,
         // and lower main theme music volume
         int numActive = 0;
-        foreach (GameObject UI in shopAndDialogueUIs)
+        foreach (GameObject UI in gameUIS)
         {
             if (UI.activeInHierarchy)
             {
@@ -142,12 +154,23 @@ public class PlayerInfo : MonoBehaviour
     // apply damage taken from a fall if falling fast enough
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetAxisRaw("Vertical") == 1) return;
-        if (collision.gameObject.CompareTag("Tiles") && Mathf.Abs(fallSpeed) > minSpeedForDamage)
+        if (collision.gameObject.CompareTag("Tiles"))
         {
-            float damage = Mathf.Round(Mathf.Pow(Mathf.Abs(fallSpeed / damageModifier), power));
-            ApplyDamage(Mathf.Min(damage, maxFallDamage));
+            if (!GetComponent<PlayerController>().IsGrounded()) return;
+            if (Mathf.Abs(fallSpeed) >= minSpeedForDamage) StartCoroutine(TakeFallDamage());
         }
+    }
+
+    // applies falling damage to player
+    IEnumerator TakeFallDamage()
+    {
+        GetComponent<PlayerAudio>().PlayerFallingDamageSound();
+        float damage = Mathf.Round(Mathf.Pow(Mathf.Abs(fallSpeed / damageModifier), power));
+        ApplyDamage(Mathf.Min(damage, maxFallDamage));
+        redScreen.SetActive(true);
+        yield return new WaitForSeconds(.15f);
+        redScreen.SetActive(false);
+        yield return new WaitForSeconds(1);
     }
 
     // consumes 1 fuel if appropriate

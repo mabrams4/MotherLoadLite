@@ -8,6 +8,12 @@ public class PlayerAudio : MonoBehaviour
     public AudioSource explosiveSound;
     public AudioSource collectMineralSound;
     public AudioSource teleportSound;
+    public AudioSource fallingDamageSound;
+
+    public void PlayerFallingDamageSound()
+    {
+        fallingDamageSound.Play();
+    }
     public void PlayDrillSound()
     {
         if (!drillSound.isPlaying) drillSound.Play();

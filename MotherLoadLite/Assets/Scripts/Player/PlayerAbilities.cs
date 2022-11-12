@@ -101,11 +101,14 @@ public class PlayerAbilities : MonoBehaviour
     IEnumerator TeleportToSurface()
     {
         playerAudio.PlayTeleportSound();
-        if (groundMapTracker.currentGroundMap != surfaceGroundMap) blackScreen.SetActive(true);
         transform.position = new Vector3(0, 10, 0);
-        yield return new WaitForSeconds(1f);
-        blackScreen.SetActive(false);
-        groundMapTracker.currentGroundMap = surfaceGroundMap;
+        if (groundMapTracker.currentGroundMap != surfaceGroundMap)
+        {
+            blackScreen.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            blackScreen.SetActive(false);
+            groundMapTracker.currentGroundMap = surfaceGroundMap;
+        }
     }
 
     void UseExplosive(float explosionRadius, float damage)
