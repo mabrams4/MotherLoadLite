@@ -346,8 +346,6 @@ public class PlayerController : MonoBehaviour
         // if drilled a mineral, collect the mineral
         if (mineralMap.GetTile(gridTilePos))
         {
-            playerAudio.PlayCollectMineralSound();
-
             TileBase mineralTile = mineralMap.GetTile(gridTilePos);
             mineralMap.SetTile(gridTilePos, null);
 
@@ -403,12 +401,12 @@ public class PlayerController : MonoBehaviour
         if (inventory.currentCapacity < inventory.maxCapacity)
         {
             text.GetComponentInChildren<TextMesh>().text = "+1 " + mineralName;
+            playerAudio.PlayCollectMineralSound();
         }
         else 
         {
             text.GetComponentInChildren<TextMesh>().text = "Inventory full";
         }
-        
     }
 
     // calculates the correct dirt tile based on a base color and the depth of the tile
