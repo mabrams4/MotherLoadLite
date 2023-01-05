@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Silver
   cashValue: 200
-  numSpawns: 400
+  numSpawns: 650
   firstFifthSpawnchance: 0.4
-  secondFifthSpawnchance: 0.75
+  secondFifthSpawnchance: 0.8
   thirdFifthSpawnchance: 0.85
   fourthFifthSpawnchance: 0.95
   tiles:

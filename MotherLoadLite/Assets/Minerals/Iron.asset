@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Iron
   cashValue: 75
-  numSpawns: 500
-  firstFifthSpawnchance: 0.65
-  secondFifthSpawnchance: 0.85
-  thirdFifthSpawnchance: 0.9
-  fourthFifthSpawnchance: 0.975
+  numSpawns: 800
+  firstFifthSpawnchance: 0.85
+  secondFifthSpawnchance: 0.95
+  thirdFifthSpawnchance: 0.975
+  fourthFifthSpawnchance: 0.99
   tiles:
   - {fileID: 11400000, guid: 98e1bbe7270b2c746a1ff348821f76e8, type: 2}
   - {fileID: 11400000, guid: e303df39f31c71e45906066fb1d63ae1, type: 2}

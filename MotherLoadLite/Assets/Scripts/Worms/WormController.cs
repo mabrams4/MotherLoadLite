@@ -295,22 +295,17 @@ public class WormController : MonoBehaviour
     // manages colliding with an evolved baby worm
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("BabyWorm") && BabyWorm.instance.evolution == BabyWorm.Evolutions.ADULT)
-        {
-            StartCoroutine(Die());
-        }
-    }
-
-    // manages colliding with the player or bounds
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bounds"))
-        {
-            StartCoroutine(Die());
-        }
+        // collided with player
         if (collision.gameObject.CompareTag("Player"))
         {
             playerInfo.ApplyDamage(damage);
+            StartCoroutine(Die());
+        }
+        
+        // collider with babyWorm or Bounds
+        if ((collision.CompareTag("BabyWorm") && BabyWorm.instance.evolution == BabyWorm.Evolutions.ADULT)
+            || collision.CompareTag("Bounds"))
+        {
             StartCoroutine(Die());
         }
     }

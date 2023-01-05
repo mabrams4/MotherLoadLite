@@ -59,6 +59,9 @@ public class PlayerController : MonoBehaviour
     public Grid grid;
     float gridMapScale;
 
+    [Range(0,2)]
+    public float tuner;
+
     // Animation
     Animator animator;
     public Sprite[] dirtParticles;
@@ -134,7 +137,6 @@ public class PlayerController : MonoBehaviour
         {
             StopAllCoroutines();    // stop animating dirt particles
             UpdateTiles();
-            
             isDrilling = false;
             hasStartedDrilling = false;
             rb.gravityScale = gravityScale;
@@ -148,6 +150,7 @@ public class PlayerController : MonoBehaviour
         // Open Inventory shortcut
         if (Input.GetKeyDown(KeyCode.I)) BMinventory.OpenInventory();
     }
+
 
     // If in contact with the ground and can drill, start drilling
     private void OnCollisionStay2D(Collision2D collision)
@@ -240,25 +243,25 @@ public class PlayerController : MonoBehaviour
     Vector3 CalculateDrillingDestinationWorldCoordinates()
     {
         Vector3 offset = new Vector3(0, 0, 0);
-
+        float gridMapScale111 = gridMapScale - tuner;
         if (horizontalMove > 0)
         {
-            offset.x += gridMapScale;
+            offset.x += gridMapScale111;
             dirtParticleSpawnPoint = leftSpawnPoint.transform.position;
         }
         else if (horizontalMove < 0)
         {
-            offset.x -= gridMapScale;
+            offset.x -= gridMapScale111;
             dirtParticleSpawnPoint = leftSpawnPoint.transform.position;
         }
         else if (verticalMove < 0)
         {
-            offset.y -= gridMapScale;
+            offset.y -= gridMapScale111;
             dirtParticleSpawnPoint = bottomSpawnPoint.transform.position;
         }
         else if (verticalMove > 0)
         {
-            offset.y += gridMapScale;
+            offset.y += gridMapScale111;
             dirtParticleSpawnPoint = topSpawnPoint.transform.position;
         }
         return transform.position + offset;

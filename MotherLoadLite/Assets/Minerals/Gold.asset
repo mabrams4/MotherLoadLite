@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gold
   cashValue: 500
-  numSpawns: 250
+  numSpawns: 600
   firstFifthSpawnchance: 0.1
   secondFifthSpawnchance: 0.35
   thirdFifthSpawnchance: 0.65

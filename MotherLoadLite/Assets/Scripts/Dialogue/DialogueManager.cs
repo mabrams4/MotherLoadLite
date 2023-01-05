@@ -109,7 +109,6 @@ public class DialogueManager : MonoBehaviour
         if (currentDialogue.trigger == "Encounter Worm" || currentDialogue.trigger == "Encounter Worm Nest"
             || currentDialogue.trigger == "Found Baby Worm" && IsFirstSentence())
         {
-            Time.timeScale = 1f;
             StartCoroutine(ZoomOut());
         }
         StartCoroutine(TypeSentence());

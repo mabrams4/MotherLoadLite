@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: DarkMatter
   cashValue: 25000
-  numSpawns: 100
+  numSpawns: 600
   firstFifthSpawnchance: 0
   secondFifthSpawnchance: 0
   thirdFifthSpawnchance: 0.01

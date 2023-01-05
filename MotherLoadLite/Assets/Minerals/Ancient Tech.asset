@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ancient Tech
   cashValue: 0
-  numSpawns: 75
+  numSpawns: 100
   firstFifthSpawnchance: 0.2
   secondFifthSpawnchance: 0.4
   thirdFifthSpawnchance: 0.6
