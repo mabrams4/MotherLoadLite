@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Diamond
   m_EditorClassIdentifier: 
   name: Diamond
-  cashValue: 6000
-  numSpawns: 550
+  cashValue: 15100
+  numSpawns: 600
   firstFifthSpawnchance: 0
-  secondFifthSpawnchance: 0.01
-  thirdFifthSpawnchance: 0.1
-  fourthFifthSpawnchance: 0.5
+  secondFifthSpawnchance: 0.03
+  thirdFifthSpawnchance: 0.3
+  fourthFifthSpawnchance: 0.7
   tiles:
   - {fileID: 11400000, guid: b73a0827154027441869ffe6dc8a5f63, type: 2}
   - {fileID: 11400000, guid: 218964886680c354e99331a613290b5a, type: 2}

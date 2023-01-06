@@ -36,6 +36,13 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
+        // Cheats lol
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log("here");
+            playerInfo.money += 10000000;
+            playerInfo.ancientTech += 100;
+        }
         // Mine ability
         if (Input.GetButtonDown("LayMine"))
         {

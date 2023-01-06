@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Dark Matter
   m_EditorClassIdentifier: 
   name: DarkMatter
-  cashValue: 25000
-  numSpawns: 600
+  cashValue: 31459
+  numSpawns: 500
   firstFifthSpawnchance: 0
   secondFifthSpawnchance: 0
-  thirdFifthSpawnchance: 0.01
-  fourthFifthSpawnchance: 0.4
+  thirdFifthSpawnchance: 0.02
+  fourthFifthSpawnchance: 0.3
   tiles:
   - {fileID: 11400000, guid: af0616ca4fb73114597d4d5107ffaacf, type: 2}
   - {fileID: 11400000, guid: af0616ca4fb73114597d4d5107ffaacf, type: 2}

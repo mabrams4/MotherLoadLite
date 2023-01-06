@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   name: Gold
-  cashValue: 500
-  numSpawns: 600
-  firstFifthSpawnchance: 0.1
-  secondFifthSpawnchance: 0.35
-  thirdFifthSpawnchance: 0.65
-  fourthFifthSpawnchance: 0.85
+  cashValue: 1111
+  numSpawns: 700
+  firstFifthSpawnchance: 0.15
+  secondFifthSpawnchance: 0.5
+  thirdFifthSpawnchance: 0.75
+  fourthFifthSpawnchance: 0.9
   tiles:
   - {fileID: 11400000, guid: e3d6f48d6038c804ba60aeeed542a4d0, type: 2}
   - {fileID: 11400000, guid: 5862682a587596a4f95459e0559b89e2, type: 2}

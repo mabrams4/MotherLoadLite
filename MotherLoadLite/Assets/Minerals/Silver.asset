@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Silver
   m_EditorClassIdentifier: 
   name: Silver
-  cashValue: 200
-  numSpawns: 650
-  firstFifthSpawnchance: 0.4
-  secondFifthSpawnchance: 0.8
-  thirdFifthSpawnchance: 0.85
+  cashValue: 420
+  numSpawns: 750
+  firstFifthSpawnchance: 0.3
+  secondFifthSpawnchance: 0.7
+  thirdFifthSpawnchance: 0.8
   fourthFifthSpawnchance: 0.95
   tiles:
   - {fileID: 11400000, guid: a7eaa2fb7726402458dfad479336605b, type: 2}

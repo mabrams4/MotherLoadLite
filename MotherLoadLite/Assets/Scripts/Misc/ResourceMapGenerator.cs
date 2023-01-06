@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Tilemaps;
 
 /* this script is responsible for randomly spawning minerals and drilled dirt patches into the game */
@@ -23,6 +24,7 @@ public class ResourceMapGenerator : MonoBehaviour
     Tilemap storeBases;
     Tilemap[] groundMaps;
 
+    public float numSpawnsPerXPos;
     void Start()
     {
         player = PlayerController.instance;
@@ -34,9 +36,10 @@ public class ResourceMapGenerator : MonoBehaviour
 
         foreach (Mineral m in minerals) SpawnMineral(m);
         for (int i = 0; i > maxDepth; i--) SpawnDirtPatch(i);
+
     }
 
-    // Spawns a mineral into the mineral map
+    // Spawns minerals into the mineral map
     void SpawnMineral(Mineral m)
     {
         for (int i = 0; i < m.numSpawns; i++)
@@ -58,6 +61,7 @@ public class ResourceMapGenerator : MonoBehaviour
     {
         float yPos;
         float p = Random.Range(0f, 1f);
+
         float firstFifth = maxDepth / numSections;
         float secondFifth = 2 * firstFifth;
         float thirdFifth = 3 * firstFifth;

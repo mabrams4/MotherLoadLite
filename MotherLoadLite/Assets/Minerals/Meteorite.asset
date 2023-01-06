@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Meteorite
   m_EditorClassIdentifier: 
   name: Meteorite
-  cashValue: 1500
-  numSpawns: 600
+  cashValue: 2550
+  numSpawns: 650
   firstFifthSpawnchance: 0
   secondFifthSpawnchance: 0.1
-  thirdFifthSpawnchance: 0.75
-  fourthFifthSpawnchance: 0.9
+  thirdFifthSpawnchance: 0.5
+  fourthFifthSpawnchance: 0.8
   tiles:
   - {fileID: 11400000, guid: 2b0bf006911750041851456455ba0564, type: 2}
   - {fileID: 11400000, guid: 8773f45bfaa37854db84b937f7a0a627, type: 2}

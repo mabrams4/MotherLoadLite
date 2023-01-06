@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Coal
   m_EditorClassIdentifier: 
   name: Coal
-  cashValue: 100
-  numSpawns: 700
-  firstFifthSpawnchance: 0.75
-  secondFifthSpawnchance: 0.9
-  thirdFifthSpawnchance: 0.95
-  fourthFifthSpawnchance: 0.99
+  cashValue: 235
+  numSpawns: 800
+  firstFifthSpawnchance: 0.4
+  secondFifthSpawnchance: 0.7
+  thirdFifthSpawnchance: 0.8
+  fourthFifthSpawnchance: 0.95
   tiles:
   - {fileID: 11400000, guid: 45c75d883b844854d98d5d6f890ca8a4, type: 2}
   - {fileID: 11400000, guid: 87ee2953a30186347b6b749f0ec42dcf, type: 2}

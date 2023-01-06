@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ancient Treasure
   m_EditorClassIdentifier: 
   name: Ancient Treasure
-  cashValue: 3500
-  numSpawns: 150
+  cashValue: 7575
+  numSpawns: 0
   firstFifthSpawnchance: 0
   secondFifthSpawnchance: 0.1
   thirdFifthSpawnchance: 0.45
